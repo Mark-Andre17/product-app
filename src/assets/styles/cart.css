@@ -1,0 +1,92 @@
+.cart__block{
+    width: 50%;
+    padding: 50px;
+    margin: 0 auto;
+    background-color: #679B00;
+    position: fixed;
+    top: 100px;
+    right: 105px;
+    animation: appear 0.9s linear;
+    animation-iteration-count: 1;
+    border-radius: 20px;
+}
+@keyframes appear{
+    0% {
+        top: -300px
+    }
+    50%{
+        top: -100px
+    }
+    100%{
+        top: 100px
+    }
+}
+.cart__header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+    align-items: center;
+}
+.cart__header > h2{
+    text-transform: uppercase;
+}
+.cart__header > button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #C9F76F;
+    border: none;
+}
+.cart__list{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 100px;
+}
+.cart__list > li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart__item > p{
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.cart__item > p:first-child{
+    width: 250px;
+}
+.cart__item > p:nth-child(2){
+    width: 100px;
+}
+.cart__item > p:nth-child(3){
+    width: 100px;
+}
+.cart__item:first-child > p::before{
+    content: 'Товар';
+    position: absolute;
+    color: white;
+    top: -70px;
+    font-size: 16px;
+}
+.cart__item:first-child > p:nth-child(2)::before{
+    content: 'Кол-во';
+    left: -20px;
+}
+.cart__item:first-child > p:nth-child(3)::before{
+    content: 'Цена';
+}
+.cart__item:first-child > p:first-child::before{
+    top: -60px;
+}
+.cart__total{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-transform: uppercase;
+    gap: 30px;
+    font-size: 26px;
+}
+.cart__item > button{
+    background-color: transparent;
+    border: none;
+}

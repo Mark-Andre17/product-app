@@ -1,0 +1,11 @@
+.product__info-text > span{
+    font-weight: 600;
+    font-size: 20px;
+}
+.product__info-text > button{
+    background-color: transparent;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-left: 5px;
+}

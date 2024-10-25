@@ -1,0 +1,28 @@
+ul, li{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.product__filters{
+    border-bottom: 1px solid #9FEE00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    gap: 20px;
+}
+.product__filter-btn{
+    height: 50px;
+    text-transform: uppercase;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #C9F76F;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    box-shadow: 5px -5px 17px 0px rgba(34, 60, 80, 0.2);
+}
+.product__filter-btn:active{
+    box-shadow: -10px 10px 25px -12px rgba(34, 60, 80, 0.2) inset;
+}

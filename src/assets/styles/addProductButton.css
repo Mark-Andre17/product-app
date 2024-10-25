@@ -1,0 +1,15 @@
+.add__button{
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: 85%;
+    left: 90%;
+    text-transform: uppercase;
+    background-color: #C9F76F;
+    border: none;
+    font-size: 24px;
+}
+.add__button:hover{
+    background-color: #9FEE00;
+}

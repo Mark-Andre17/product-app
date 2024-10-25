@@ -1,24 +1,62 @@
-import React from 'react';
-import logo from './assets/icons/logo.svg';
-import {SApp, SHeader, SLink, SLogo} from "./assets/styles/app.styles";
+import React, { useEffect, useCallback, useState } from 'react';
+import ProductList from './components/ProductList';
+import { useAppDispatch, useAppSelector } from './hooks/appHooks';
+import { fetchProducts } from './actions/fetchProducts';
+import ProductFilter from './components/ProductFilter';
+import AddProductButton from './components/AddProductButton';
+import { AddModal } from './components/AddModal';
+import './assets/styles/base.css';
+import { CartButton } from './components/CartButton';
+import { Cart } from './components/Cart';
+
 
 function App() {
+    const {products, loading, error} = useAppSelector(state => state.products)
+    const [filterList, setFilterList] = useState<string[]>(['all'])
+    const [currentCategory, setCurrentCategory] = useState<string>('all')
+    const [visibleAdd, setVisibleAdd] = useState<boolean>(false)
+    const [visibleCart, setVisibleCart] = useState<boolean>(false)
+    const dispatch = useAppDispatch()
+    useEffect(() => {
+        dispatch(fetchProducts())
+    }, [dispatch])
+
+    const handleFilter = useCallback((category: string) => {
+        setCurrentCategory(category);
+    }, []);
+
+
+    if  (loading) {
+        return <div>Loading....</div>
+    }
+
+    if (error){
+        return  <div>{error}</div>
+    }
+    products.forEach((item) => {
+        if (!filterList.includes(item.category)) {
+            setFilterList([...filterList, item.category])
+        }
+    })
+
     return (
-        <SApp>
-            <SHeader>
-                <SLogo src={logo} alt="logo"/>
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <SLink
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </SLink>
-            </SHeader>
-        </SApp>
+        <div>
+            <CartButton visibleCart={visibleCart} setVisibleCart={setVisibleCart}/>
+            {visibleCart ? <Cart visibleCart={visibleCart} setVisibleCart={setVisibleCart}/> : null}
+            <ProductFilter filterList={filterList} handleFilter={handleFilter}/>
+            <ProductList currentCategory={currentCategory}/>
+            {visibleAdd 
+            ? <AddModal 
+                filterList={filterList}
+                products={products}
+                visibleAdd={visibleAdd} 
+                setVisibleAdd={setVisibleAdd}
+            /> 
+            : <AddProductButton 
+                visibleAdd={visibleAdd} 
+                setVisibleAdd={setVisibleAdd}
+            />}
+        </div>
     );
 }
 

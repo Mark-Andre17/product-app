@@ -3,13 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^2.3.0",
+    "axios": "^1.7.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-hook-form": "^7.53.1",
+    "react-redux": "^9.1.2",
     "react-scripts": "5.0.1",
-    "styled-components": "^5.3.11",
+    "redux": "^5.0.1",
+    "redux-persist": "^6.0.0",
     "typescript": "^4.9.5"
   },
+  "homepage": "",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -35,11 +43,17 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^6.1.4",
+    "@mui/material": "^6.1.4",
     "@types/node": "^16.18.114",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
     "@types/styled-components": "^5.1.34",
     "eslint-plugin-jsx-a11y": "^6.10.0",
+    "gh-pages": "^6.2.0",
     "prettier": "^2.8.8"
   }
 }
