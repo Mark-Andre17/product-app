@@ -23,6 +23,6 @@
 }
 @media screen and (max-width: 768px){
     .add__button{
-        left: 88%;
+        left: calc(100% - 70px);
     }
 }
