@@ -1,4 +1,4 @@
-import React, { FC, FormEvent } from "react";
+import React, { FC } from "react";
 import { IProduct, Keys } from "../models/product.model";
 import "../assets/styles/addModal.css";
 import CloseIcon from '@mui/icons-material/Close';

@@ -5,7 +5,7 @@ import "../assets/styles/productCard.css";
 import { useAppDispatch, useAppSelector } from "../hooks/appHooks";
 import { iCart } from "../models/cart.model";
 import { AddProductToCart, UpdateProductInCart } from "../store/reducers/cartSLice";
-import { count } from "console";
+import { deleteProducts } from "../actions/deleteProduct";
 
 type ProductCardProps = {
     product: IProduct
@@ -32,7 +32,13 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
             dispatch(AddProductToCart(productToCart));
         }
     }, [dispatch, product.title, product.price, cart]);
-    
+
+    const handleDelete = (id: number) => {
+        if(id){
+            dispatch(deleteProducts(id));
+        }
+        
+    };
     return (
         <div className="product__card">
             <img src={product.image} alt={product.title}/>
@@ -41,6 +47,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
                 <Description description={product.description}/>
                 <p className="product__info-price">{product.price}$</p>
                 <button onClick={handleAddToCart} className="product__info-btn">В корзину</button>
+                <button onClick={() => handleDelete(product.id)} className="product__info-btn">Удалить</button>
             </div>
         </div>
     )

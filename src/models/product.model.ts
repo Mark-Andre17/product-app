@@ -7,11 +7,12 @@ export enum EProductTypes {
 type Keys = Array<"title" | "price" | "category" | "description" | "image">;
 
 type ProductsAction = {
-    type: EProductTypes.FetchProducts
+    type: EProductTypes.FetchProducts,
+    payload: IProduct[]
 }
 type ProductsActionSuccess = {
     type: EProductTypes.FetchProductsSuccess,
-    payload: IProduct[]
+    payload: IProduct
 }
 type ProductsActionError = {
     type: EProductTypes.FetchProductsError,
@@ -41,6 +42,9 @@ type ProductsActionType = ProductsAction | ProductsActionSuccess | ProductsActio
 export type {
     IProduct, 
     IProductState, 
+    ProductsActionSuccess,
+    ProductsActionError,
+    ProductsAction,
     ProductsActionType,
     Keys
 };

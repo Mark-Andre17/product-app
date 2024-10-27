@@ -26,3 +26,21 @@ ul, li{
 .product__filter-btn:active{
     box-shadow: -10px 10px 25px -12px rgba(34, 60, 80, 0.2) inset;
 }
+@media screen and (max-width: 1024px){
+    .product__filter-btn{
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 30px;
+        font-size: 12px;
+    }
+    
+}
+@media screen and (max-width: 768px){
+    .product__filters{
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: flex-start;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}

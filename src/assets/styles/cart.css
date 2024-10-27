@@ -6,9 +6,15 @@
     position: fixed;
     top: 100px;
     right: 105px;
+    height: 80%;
     animation: appear 0.9s linear;
     animation-iteration-count: 1;
     border-radius: 20px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 10;
 }
 @keyframes appear{
     0% {
@@ -61,23 +67,6 @@
 .cart__item > p:nth-child(3){
     width: 100px;
 }
-.cart__item:first-child > p::before{
-    content: 'Товар';
-    position: absolute;
-    color: white;
-    top: -70px;
-    font-size: 16px;
-}
-.cart__item:first-child > p:nth-child(2)::before{
-    content: 'Кол-во';
-    left: -20px;
-}
-.cart__item:first-child > p:nth-child(3)::before{
-    content: 'Цена';
-}
-.cart__item:first-child > p:first-child::before{
-    top: -60px;
-}
 .cart__total{
     display: flex;
     justify-content: flex-start;
@@ -89,4 +78,29 @@
 .cart__item > button{
     background-color: transparent;
     border: none;
+}
+@media screen and (max-width: 1024px){
+    .cart__block{
+        padding: 20px;
+        width: 40%;
+        right: 30px;
+
+    }
+    .cart__header, .cart__header{
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-width: 768px){
+    .cart__block{
+        width: 320px;
+        right: 0;
+        top: 110px;
+    }
+    .cart__item > p{
+        font-size: 14px;
+    }
+    .cart__item > p:nth-child(2){
+        font-size: 18px;
+        margin-left: 20px;
+    }
 }

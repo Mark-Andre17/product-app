@@ -5,3 +5,11 @@
     gap: 30px;
     justify-content: center;
 }
+@media screen and (max-width: 768px){
+    .product__list{
+        padding: 0;
+        padding-top: 10px;
+        width: 320px;
+        margin: 0 auto;
+    }
+}

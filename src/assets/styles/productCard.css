@@ -45,7 +45,31 @@ p, h2, ul, li, button{
     text-transform: uppercase;
     border: none;
     border-radius: 15px;
+    margin-bottom: 20px;
 }
 .product__info-btn:active{
     background-color: #9FEE00;
+}
+@media screen and (max-width: 768px){
+    .product__info{
+        width: 50%;
+    }
+    .product__card{
+        width: 100%;
+    }
+    .product__card > img{
+        padding: 0;
+        width: 50%;
+        height: 100px;
+    }
+    .product__info > h2{
+        font-size: 16px;
+    }
+    .product__info > .product__info-text{
+        font-size: 10px;
+    }
+    .product__info-btn{
+        height: 30px;
+        font-size: 10px;
+    }
 }

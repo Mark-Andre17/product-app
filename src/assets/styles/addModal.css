@@ -73,3 +73,37 @@
     font-weight: 600;
     text-transform: uppercase;
 }
+@media screen and (max-width: 1024px){
+    .add__modal{
+        width: 50%;
+        top: calc((100% - 75%) / 2);
+        left: calc((100% - 50%) / 2);
+        overflow: scroll;
+    }
+    .add__form{
+        gap: 5px;
+    }
+    .add__form > label > input{
+        height: auto;
+        margin-bottom: 5px;
+    }
+    .add__form > select{
+        padding: 0;
+        padding-right: 10px;
+        padding-left: 10px;
+        height: 40px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width: 768px){
+    .add__modal{
+        width: 320px;
+        left: calc((100% - 320px) / 2);;
+        top: calc((100% - 60%) / 2);
+        padding: 20px;
+    }
+    .input__error > p{
+        font-size: 10px;
+    }
+}
